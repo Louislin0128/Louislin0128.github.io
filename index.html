@@ -16,7 +16,7 @@
       <a class="social-icon-link" href="https://www.linkedin.com/in/yuanzhih-lin" target="_blank" rel="noopener noreferrer" data-i18n-aria="linkedinLabel" aria-label="LinkedIn 個人頁" title="LinkedIn"><img src="assets/icons/linkedin.svg" alt="" aria-hidden="true" width="20" height="20"></a>
       <a class="social-icon-link" href="https://github.com/Louislin0128" target="_blank" rel="noopener noreferrer" data-i18n-aria="githubLabel" aria-label="GitHub 個人頁" title="GitHub"><img src="assets/icons/github.svg" alt="" aria-hidden="true" width="20" height="20"></a>
     </nav>
-    <div class="header-tools"><button class="tool-button" id="languageToggle" type="button" aria-label="切換語言">EN</button><button class="tool-button theme-button" id="themeToggle" type="button" aria-label="切換深色主題"><span aria-hidden="true">◐</span><span data-i18n="darkMode">深色</span></button><button class="mobile-menu" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileNav"><span class="sr-only" data-i18n="openMenu">開啟導覽</span><i></i><i></i></button></div>
+    <div class="header-tools"><fieldset class="language-switch"><legend class="sr-only" data-i18n="languageControl">頁面語言</legend><label class="language-choice"><input class="sr-only" type="radio" name="site-language" id="languageZh" value="zh" data-i18n-aria="languageZhLabel"><span>繁中</span></label><label class="language-choice"><input class="sr-only" type="radio" name="site-language" id="languageEn" value="en" data-i18n-aria="languageEnLabel"><span>EN</span></label></fieldset><label class="theme-switch-control"><input class="sr-only theme-switch-input" id="themeToggle" type="checkbox" role="switch" aria-label="深色主題" data-i18n-aria="themeSwitchLabel"><span class="theme-switch-track" aria-hidden="true"><span class="theme-switch-thumb"><span class="theme-switch-icon">☀</span></span></span><span class="theme-switch-label" data-i18n="themeControlLabel">主題</span></label><button class="mobile-menu" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileNav"><span class="sr-only" data-i18n="openMenu">開啟導覽</span><i></i><i></i></button></div>
   </header>
   <nav class="mobile-nav" id="mobileNav" data-i18n-aria="mobileNavLabel" aria-label="行動版導覽" hidden>
     <a href="#about" data-i18n="navAbout">關於我</a><a href="#skills" data-i18n="navSkills">專業技能</a><a href="#experience" data-i18n="navExperience">研究與經歷</a><a href="#education" data-i18n="navEducation">學歷</a><a href="honors.html" data-i18n="navHonors">榮譽榜</a><a href="journal.html" data-i18n="navJournal">文章</a>
@@ -24,9 +24,23 @@
   </nav>
   <main id="main">
     <section class="landing-hero about-landing" aria-labelledby="aboutHeroTitle">
-      <div class="landing-backdrop scenic-placeholder" role="img" data-i18n-aria="landscapeAlt" aria-label="風景照片佔位，待本人提供"><span class="placeholder-label" data-i18n="landscapePlaceholder">[ 風景照片待提供 ]</span><span class="backdrop-orbit orbit-one" aria-hidden="true"></span><span class="backdrop-orbit orbit-two" aria-hidden="true"></span><span class="backdrop-horizon" aria-hidden="true"></span></div>
-      <div class="landing-inner section-shell"><figure class="landing-portrait about-hero-portrait"><img class="portrait-image" src="assets/images/louis_portrait.png" alt="林垣志 Louis Lin 的個人肖像" data-i18n-alt="portraitAlt" fetchpriority="high" decoding="async"></figure>
-        <div class="landing-copy"><p class="hero-greeting" data-i18n="greeting">你好，我是 Louis</p><h1 id="aboutHeroTitle" data-i18n="heroName">林垣志</h1><p class="landing-role" data-i18n="heroRole">生成式 AI・影片編輯・電腦視覺</p><p class="landing-summary" data-i18n="landingSummary">以生成式 AI 與電腦視覺為研究核心，專注影片生成、編輯與模型實作。</p><div class="landing-actions"><a class="button button-navy" href="mailto:louislin.cs12@nycu.edu.tw"><span data-i18n="contactMe">聯絡我</span><span aria-hidden="true">↗</span></a><a class="button button-outline" href="assets/resume/Louis_Lin_Resume_EN.pdf" download><span data-i18n="resumeDownload">下載英文履歷</span><span aria-hidden="true">↓</span></a></div><div class="landing-location"><span class="location-dot" aria-hidden="true"></span><span data-i18n="location">台灣</span></div></div>
+      <div class="landing-backdrop hero-landscape" role="img" data-i18n-aria="landscapeAlt" aria-label="彩虹映照下的湖畔山城風景"></div>
+      <div class="landing-inner section-shell">
+        <figure class="landing-portrait about-hero-portrait">
+          <img class="portrait-image" src="assets/images/louis_portrait.png" alt="林垣志 Louis Lin 的個人肖像" data-i18n-alt="portraitAlt" fetchpriority="high" decoding="async">
+        </figure>
+        <div class="landing-copy">
+          <p class="hero-greeting" data-i18n="greeting">你好，我是 Louis</p>
+          <h1 id="aboutHeroTitle" data-i18n="heroName">林垣志</h1>
+          <p class="landing-role">
+            <img class="typing-headline" src="https://readme-typing-svg.demolab.com?font=Caveat&amp;weight=600&amp;size=40&amp;pause=2500&amp;color=56d4dd&amp;center=false&amp;vCenter=true&amp;width=900&amp;height=62&amp;lines=Master's%20Graduate%20from%20National%20Chiao%20Tung%20University%2C%20Taiwan" alt="Typing headlines" width="900" height="62" decoding="async">
+          </p>
+          <p class="landing-summary" data-i18n="landingSummary">以生成式 AI 與電腦視覺為研究核心，專注影片生成、編輯與模型實作。</p>
+          <div class="landing-actions">
+            <a class="button button-navy" href="mailto:louislin.cs12@nycu.edu.tw"><span data-i18n="contactMe">聯絡我</span><span aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="assets/resume/Louis_Lin_Resume_EN.pdf"><span data-i18n="resumeView">查看履歷</span><span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
       </div>
       <a class="landing-scroll" href="#about" data-i18n="aboutMe">關於我 <span aria-hidden="true">↓</span></a>
     </section>
@@ -67,10 +81,37 @@
     </section>
     <section class="education-section section-band" id="education" aria-labelledby="educationTitle"><div class="section-shell"><div class="section-title"><h2 id="educationTitle" data-i18n="educationHeading">學歷</h2></div><div class="education-list">
       <article class="education-card"><figure class="education-photo" role="img" data-i18n-aria="highSchoolPhotoAlt" aria-label="高中校園照片待提供"><span data-i18n="photoPending">[ 校園照片待提供 ]</span></figure><div class="education-content"><p class="education-date" data-i18n="highSchoolDate">民國 105 年 09 月 — 108 年 06 月</p><h3 data-i18n="highSchoolName">臺中市立沙鹿工業高級中等學校</h3><p class="education-program" data-i18n="highSchoolProgram">資訊科</p><div class="education-tags"><span data-i18n="highSchoolTagRank">班排第 3 名（前 7.50%）</span><span data-i18n="highSchoolTagAward">校長獎畢業</span><span data-i18n="highSchoolTagContest">軟體競賽選手</span></div></div></article>
-      <article class="education-card"><figure class="education-photo" role="img" data-i18n-aria="universityPhotoAlt" aria-label="大學校園照片待提供"><span data-i18n="photoPending">[ 校園照片待提供 ]</span></figure><div class="education-content"><p class="education-date" data-i18n="universityDate">民國 108 年 09 月 — 112 年 06 月</p><h3 data-i18n="universityName">國立高雄科技大學（第一校區）</h3><p class="education-program" data-i18n="universityProgram">電腦與通訊工程系</p><div class="education-tags"><span data-i18n="universityTagClassRank">班排第 1 名（前 1.72%）</span><span data-i18n="universityTagDeptRank">系排第 2 名（前 1.75%）</span><span data-i18n="universityTagAward">Academic Excellence Award</span></div></div></article>
-      <article class="education-card"><figure class="education-photo" role="img" data-i18n-aria="graduatePhotoAlt" aria-label="研究所校園照片待提供"><span data-i18n="photoPending">[ 校園照片待提供 ]</span></figure><div class="education-content"><p class="education-date" data-i18n="graduateDate">民國 112 年 09 月 — 115 年 05 月</p><h3 data-i18n="graduateSchoolName">國立陽明交通大學</h3><p class="education-program" data-i18n="graduateProgram">資訊學院・數據科學與工程研究所</p><div class="education-tags"><span data-i18n="graduateGpa">累積 GPA：4.14 / 4.30</span></div></div></article>
+      <article class="education-card"><figure class="education-photo education-photo-real"><img src="assets/images/nkust-campus-photo.jpg" alt="林垣志穿著學位服，於國立高雄科技大學校園留影" data-i18n-alt="universityPhotoAlt" loading="lazy" decoding="async" width="832" height="619"></figure><div class="education-content"><p class="education-date" data-i18n="universityDate">民國 108 年 09 月 — 112 年 06 月</p><h3 data-i18n="universityName">國立高雄科技大學（第一校區）</h3><p class="education-program" data-i18n="universityProgram">電腦與通訊工程系</p><div class="education-tags"><span data-i18n="universityTagClassRank">班排第 1 名（前 1.72%）</span><span data-i18n="universityTagDeptRank">系排第 2 名（前 1.75%）</span><span data-i18n="universityTagAward">Academic Excellence Award</span></div></div></article>
+      <article class="education-card"><figure class="education-photo education-photo-real"><img src="assets/images/nycu-campus-photo.webp" alt="林垣志穿著學位服並手捧花束，站在陽明交大資訊學院標誌旁" data-i18n-alt="graduatePhotoAlt" loading="lazy" decoding="async" width="2048" height="1638"></figure><div class="education-content"><p class="education-date" data-i18n="graduateDate">民國 112 年 09 月 — 115 年 05 月</p><h3 data-i18n="graduateSchoolName">國立陽明交通大學</h3><p class="education-program" data-i18n="graduateProgram">資訊學院・數據科學與工程研究所</p><div class="education-tags"><span data-i18n="graduateGpa">累積 GPA：4.14 / 4.30</span></div></div></article>
     </div></div></section>
-    <section class="contact-band" id="contact"><div class="section-shell contact-inner"><h2 data-i18n="contactTitle">保持聯絡</h2><a href="mailto:louislin.cs12@nycu.edu.tw" class="contact-email">louislin.cs12@nycu.edu.tw <span aria-hidden="true">↗</span></a></div></section>
+    <section class="contact-band" id="contact" aria-labelledby="contactTitle">
+      <div class="section-shell contact-section">
+        <h2 class="contact-title" id="contactTitle" data-i18n="contactTitle">Let's Connect</h2>
+        <div class="contact-grid">
+          <form class="contact-form" id="contactForm" action="mailto:louislin.cs12@nycu.edu.tw" method="post" enctype="text/plain">
+            <div class="contact-field-row">
+              <div class="contact-field"><label for="contactName" data-i18n="contactNameLabel">Name</label><input id="contactName" name="name" type="text" autocomplete="name" required></div>
+              <div class="contact-field"><label for="contactEmailInput" data-i18n="contactEmailLabel">Email</label><input id="contactEmailInput" name="email" type="email" autocomplete="email" required></div>
+            </div>
+            <div class="contact-field"><label for="contactSubject" data-i18n="contactSubjectLabel">Subject</label><input id="contactSubject" name="subject" type="text" required></div>
+            <div class="contact-field"><label for="contactMessage" data-i18n="contactMessageLabel">Message</label><textarea id="contactMessage" name="message" rows="5" required></textarea></div>
+            <button class="contact-send" type="submit"><span data-i18n="contactSend">Send message</span><span aria-hidden="true">↗</span></button>
+            <p class="contact-form-note" data-i18n="contactMailtoNote">Your email app will open with a draft. Review it and send manually.</p>
+          </form>
+          <aside class="contact-info" aria-labelledby="contactInfoTitle">
+            <p class="contact-info-kicker" data-i18n="contactInfoKicker">GET IN TOUCH</p>
+            <h3 id="contactInfoTitle" data-i18n="contactInfoTitle">Contact Information</h3>
+            <p class="contact-intro" data-i18n="contactIntro">For research discussions and engineering collaborations in generative AI, video editing, and computer vision, feel free to reach out.</p>
+            <dl class="contact-info-list">
+              <div><dt data-i18n="contactEmailLabel">Email</dt><dd><a href="mailto:louislin.cs12@nycu.edu.tw">louislin.cs12@nycu.edu.tw</a></dd></div>
+              <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/yuanzhih-lin" target="_blank" rel="noopener noreferrer">yuanzhih-lin ↗</a></dd></div>
+              <div><dt>GitHub</dt><dd><a href="https://github.com/Louislin0128" target="_blank" rel="noopener noreferrer">Louislin0128 ↗</a></dd></div>
+              <div><dt data-i18n="contactLocationLabel">Location</dt><dd data-i18n="contactLocationValue">Taiwan</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class="site-footer section-shell"><a class="brand" href="index.html" data-i18n-aria="homeLabel"><span class="brand-mark">L.</span><span>Louis Lin</span></a><span data-i18n="footerCopyright">© 2026 Louis Lin</span><a href="https://github.com/adryd325/oneko.js" target="_blank" rel="noreferrer" class="cat-credit" data-i18n="catCredit">貓咪元件：oneko.js・MIT</a></footer><button class="cat-toggle" id="catToggle" type="button" aria-pressed="true" hidden><span class="cat-status" aria-hidden="true">●</span><span data-i18n="hideCat">隱藏貓咪</span></button>
 </body>
