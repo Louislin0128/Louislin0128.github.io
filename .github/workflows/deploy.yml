@@ -1,0 +1,60 @@
+name: Check and deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Validate JSON in data/
+        run: |
+          if [ -d data ]; then
+            find data -name '*.json' -print0 | xargs -0 -r -n1 python3 -m json.tool > /dev/null
+          fi
+
+      - name: Check local links and assets in HTML
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --offline --no-progress --root-dir ${{ github.workspace }} './**/*.html'
+          fail: true
+
+  build:
+    needs: check
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/configure-pages@v5
+      - name: Stage site files
+        run: |
+          mkdir _site
+          rsync -a --exclude='.git' --exclude='.github' --exclude='_site' ./ _site/
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
