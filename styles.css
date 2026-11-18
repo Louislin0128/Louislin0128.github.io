@@ -221,9 +221,6 @@
 .fact-heading svg{width:16px;height:16px;flex:none;padding:0;border:0;border-radius:0;background:none;stroke:#87c8d4;stroke-width:1.55;stroke-linecap:round;stroke-linejoin:round;fill:none}
 .fact-heading h4{font:600 11px/1.45 var(--sans);color:#e8f0f2;margin:0}
 .fact-card p{font:400 11.5px/1.65 var(--sans);color:var(--float-copy);margin:0;overflow-wrap:anywhere}
-.fact-card-collections{display:grid;grid-template-columns:minmax(105px,.7fr) minmax(0,1.3fr);gap:13px}
-.fact-badge-group{min-width:0}
-.fact-badge-group .fact-heading{margin-bottom:9px}
 .fact-pill-list{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0}
 .fact-pill-list li{display:inline-flex;align-items:center;min-height:25px;padding:4px 9px;border:1px solid rgba(255,255,255,.09);border-radius:999px;background:rgba(255,255,255,.065);color:#d9e6eb;font:500 9.5px/1.35 var(--sans)}
 .skills-section{padding-block:78px 88px;background:var(--paper-deep)}
@@ -742,6 +739,7 @@
   height: auto;
   min-height: 0;
   aspect-ratio: auto;
+  align-self: center;
   overflow: hidden;
   border-color: var(--float-card-edge);
   border-radius: 14px;
@@ -851,4 +849,119 @@
   .language-choice span, .theme-switch-track, .theme-switch-thumb,
   .about-page .contact-field input, .about-page .contact-field textarea,
   .about-page .contact-send { transition: none !important; }
+}
+
+/* A subtle tonal surface progression distinguishes the About and Skills bands in both themes. */
+:root {
+  --section-about-start: #F4F1E8;
+  --section-about-end: #F1EEE5;
+  --section-skills-start: #ECE9DF;
+  --section-skills-end: #E9E6DC;
+}
+:root[data-theme="dark"] {
+  --section-about-start: #142C3E;
+  --section-about-end: #172F42;
+  --section-skills-start: #1A3448;
+  --section-skills-end: #1D374B;
+}
+.about-page .about-details.section-band {
+  background: linear-gradient(165deg, var(--section-about-start), var(--section-about-end)) !important;
+}
+.about-page .skills-section {
+  background: linear-gradient(165deg, var(--section-skills-start), var(--section-skills-end)) !important;
+}
+
+/* Keep native radio/switch controls focusable while aligning their hit boxes to visible controls.
+   This prevents focus on clipped 1px inputs in the sticky header from scrolling the document. */
+.language-choice input.sr-only,
+.theme-switch-control input.sr-only {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  clip: auto;
+  clip-path: none;
+  overflow: hidden;
+  opacity: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+.theme-switch-control { position: relative; }
+
+/* Italicize only the requested English degree names; keep Chinese text upright. */
+html[lang="en"] .education-program-en-italic { font-style: italic; }
+html[lang="zh-Hant"] .education-program-en-italic { font-style: normal; }
+
+/* Compact the hero message chip and align its calls to action with the copy card. */
+.about-page .about-landing .landing-summary {
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 10px;
+  background: rgba(255,255,255,.045);
+  box-shadow: 0 8px 22px rgba(2,12,21,.09);
+}
+.about-page .about-landing .landing-actions .button {
+  min-height: 40px;
+  padding: 9px 13px;
+  border-radius: 9px;
+}
+
+
+/* Five independently raised Quick Facts surfaces, with a restrained theme-aware glow. */
+.about-page .about-card-kicker { white-space: nowrap; }
+.about-page .facts-grid { grid-template-columns: repeat(20, minmax(0, 1fr)); }
+.about-page .fact-card-role { grid-column: span 7; }
+.about-page .fact-card-education { grid-column: span 13; }
+.about-page .fact-card-achievement { grid-column: 1 / -1; }
+.about-page .fact-card-languages { grid-column: span 7; }
+.about-page .fact-card-interests { grid-column: span 13; }
+.about-page .facts-window .fact-heading h4 { white-space: nowrap; }
+.about-page .fact-pill-list li {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+.about-page .facts-window .fact-card {
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--ink) 8%, transparent),
+              0 0 12px color-mix(in srgb, var(--sky) 7%, transparent);
+  transition: transform .22s cubic-bezier(.2,.7,.25,1),
+              box-shadow .22s ease, border-color .22s ease;
+}
+@media (hover: hover) {
+  .about-page .facts-window .fact-card:hover {
+    border-color: color-mix(in srgb, var(--sky) 42%, var(--float-card-edge));
+    box-shadow: 0 15px 26px color-mix(in srgb, var(--ink) 14%, transparent),
+                0 0 18px color-mix(in srgb, var(--sky) 21%, transparent);
+  }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .about-page .facts-window .fact-card:hover { transform: translateY(-4px); }
+}
+.about-page .fact-achievement-copy strong { color: var(--ink); font-weight: 700; }
+.about-page .interest-tag-icon { display: inline-grid; flex: none; place-items: center; font-size: 1.08em; line-height: 1; }
+@media (max-width: 900px) {
+  .about-page .facts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .about-page .fact-card-role,
+  .about-page .fact-card-education,
+  .about-page .fact-card-languages,
+  .about-page .fact-card-interests { grid-column: auto; }
+  .about-page .fact-card-achievement { grid-column: 1 / -1; }
+}
+@media (max-width: 680px) {
+  .about-page .fact-card-languages,
+  .about-page .fact-card-interests { grid-column: 1 / -1; }
+}
+@media (max-width: 480px) {
+  .about-page .facts-grid { grid-template-columns: minmax(0, 1fr); }
+  .about-page .fact-card-role,
+  .about-page .fact-card-education,
+  .about-page .fact-card-achievement,
+  .about-page .fact-card-languages,
+  .about-page .fact-card-interests { grid-column: 1 / -1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .about-page .facts-window .fact-card { transition: none !important; }
+  .about-page .facts-window .fact-card:hover { transform: none; }
 }
