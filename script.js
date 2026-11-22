@@ -42,7 +42,7 @@ const text={
     projectMedicalTitle:"醫療決策輔助系統｜手術時間預測",
     projectMedicalBadge:"台灣專利核准",
     projectMedicalDate:"2021.09 — 2022.06 · NKUST 專題研究",
-    projectMedicalSummary:"以 Java Swing 開發一款運用術前資訊預測手術耗用時間的決策輔助系統，處理超過 115,000 筆手術紀錄；獲第 27 屆資訊服務創新競賽佳作與國科會大專生研究計畫補助。",
+    projectMedicalSummary:"以 Java Swing 開發一款運用術前資訊預測手術耗用時間的決策輔助系統，處理超過 115,000 筆手術紀錄；獲第 27 屆資訊服務創新競賽佳作、國科會大專生研究計畫補助。",
     timelineServerDate:"2024.02 — 2025.02",
     timelineServerRole:"Server Manager",
     timelineServerLab:"Applied Computing and Multimedia Lab",
