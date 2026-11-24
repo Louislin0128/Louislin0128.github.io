@@ -1002,8 +1002,8 @@ html[lang="zh-Hant"] .education-program-en-italic { font-style: normal; }
 @media(prefers-reduced-motion:reduce){.featured-research-card,.research-title-link-icon,.research-video-nav{transition:none!important}}
 
 
-/* Skills catalog: scoped layout for the four-row skills reference. */
-.about-page .skills-section .skills-shell{width:min(100% - 44px,1440px);max-width:1440px}
+/* Skills catalog: scoped layout for the five-category skills reference. */
+.about-page .skills-section .skills-shell{width:min(calc(100% - clamp(40px,7.4vw,104px)),1380px);max-width:1380px}
 .about-page .skills-section .skills-catalog{overflow:hidden;border:1px solid var(--line);border-radius:24px;background:var(--surface)}
 .about-page .skills-section .skill-category{display:grid;grid-template-columns:minmax(245px,27%) minmax(0,1fr);align-items:center;gap:24px;padding:27px 30px;border-bottom:1px solid var(--line)}
 .about-page .skills-section .skill-category:last-child{border-bottom:0}
@@ -1033,8 +1033,8 @@ html[lang="zh-Hant"] .education-program-en-italic { font-style: normal; }
 :root[data-theme="dark"] .about-page .skills-section .skill-mark-logo--mysql,:root[data-theme="dark"] .about-page .skills-section .skill-mark-logo--github{filter:brightness(0) invert(.9)}
 .about-page .skills-section .skill-name{min-width:0;font:500 13px/1.4 var(--sans);color:var(--ink-soft);overflow-wrap:anywhere;hyphens:auto}
 @media(max-width:1100px){.about-page .skills-section .skill-category{grid-template-columns:minmax(210px,28%) minmax(0,1fr);gap:18px;padding:24px 22px}.about-page .skills-section .skills-list{grid-template-columns:repeat(4,minmax(0,1fr));gap:11px 9px}.about-page .skills-section .skill-item{gap:8px}.about-page .skills-section .skill-mark{flex-basis:38px;width:38px;height:38px;border-radius:10px}.about-page .skills-section .skill-name{font-size:12px}}
-@media(max-width:760px){.about-page .skills-section .skills-shell{width:min(100% - 36px,620px)}.about-page .skills-section .skills-catalog{border-radius:19px}.about-page .skills-section .skill-category{grid-template-columns:minmax(0,1fr);gap:17px;padding:21px 19px}.about-page .skills-section .skill-category-heading{grid-template-columns:auto 2px minmax(0,1fr);gap:11px}.about-page .skills-section .skill-category-number{font-size:30px}.about-page .skills-section .skill-category-rule{height:25px;width:2px}.about-page .skills-section .skills-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 8px}.about-page .skills-section .skill-item{gap:8px;min-height:44px}.about-page .skills-section .skill-mark{flex-basis:36px;width:36px;height:36px;font-size:9px}.about-page .skills-section .skill-name{font-size:12px}}
-@media(max-width:480px){.about-page .skills-section .skills-shell{width:calc(100% - 32px)}.about-page .skills-section .skill-category{padding:19px 14px}.about-page .skills-section .skills-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 8px}.about-page .skills-section .skill-item{gap:8px}.about-page .skills-section .skill-mark{flex-basis:36px;width:36px;height:36px}.about-page .skills-section .skill-name{font-size:11.5px;line-height:1.35}}
+@media(max-width:760px){.about-page .skills-section .skills-catalog{border-radius:19px}.about-page .skills-section .skill-category{grid-template-columns:minmax(0,1fr);gap:17px;padding:21px 19px}.about-page .skills-section .skill-category-heading{grid-template-columns:auto 2px minmax(0,1fr);gap:11px}.about-page .skills-section .skill-category-number{font-size:30px}.about-page .skills-section .skill-category-rule{height:25px;width:2px}.about-page .skills-section .skills-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 8px}.about-page .skills-section .skill-item{gap:8px;min-height:44px}.about-page .skills-section .skill-mark{flex-basis:36px;width:36px;height:36px;font-size:9px}.about-page .skills-section .skill-name{font-size:12px}}
+@media(max-width:480px){.about-page .skills-section .skills-shell{width:calc(100% - 36px)}.about-page .skills-section .skill-category{padding:19px 14px}.about-page .skills-section .skills-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 8px}.about-page .skills-section .skill-item{gap:8px}.about-page .skills-section .skill-mark{flex-basis:36px;width:36px;height:36px}.about-page .skills-section .skill-name{font-size:11.5px;line-height:1.35}}
 
 
 /* Temporary preview: extend the existing research title marker to Education and Skills. */
@@ -1083,3 +1083,38 @@ html[lang="zh-Hant"] .education-program-en-italic { font-style: normal; }
 /* Chinese contact copy is italic; English stays unchanged. */
 html[lang="zh-Hant"] .about-page .contact-title { font-style: italic; }
 .about-page .contact-info-kicker:empty { display: none; }
+
+
+/* Skills extension preview: align the lead and mirror the supplied nested outline. */
+.about-page .skills-section .section-lede { margin-left: 24px; }
+.about-page .skills-section .skills-extra-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 22px; min-width: 0; }
+.about-page .skills-section .skills-extra-group { min-width: 0; padding-left: 12px; border-left: 2px solid var(--line); }
+.about-page .skills-section .skills-extra-group--nlp { grid-column: 1 / -1; }
+.about-page .skills-section .skills-extra-group h4 { margin: 0 0 10px; color: var(--ink-soft); font: 600 11px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.about-page .skills-section .skills-extra-llm { min-width: 0; padding-left: 12px; border-left: 1px solid var(--line); }
+.about-page .skills-section .skills-extra-llm h5 { margin: 0 0 9px; color: var(--muted); font: 600 10px/1.4 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+.about-page .skills-section .skills-extra-model-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; min-width: 0; }
+.about-page .skills-section .skills-extra-subgroup { min-width: 0; }
+.about-page .skills-section .skills-extra-subgroup h6 { margin: 0 0 5px; color: var(--muted); font: 600 10px/1.4 var(--mono); letter-spacing: .04em; text-transform: uppercase; }
+@media (min-width: 1200px) { .about-page .skills-section .skills-extra-model-groups { grid-template-columns: minmax(348px, 1.5fr) minmax(125px, .65fr) minmax(230px, 1fr); } .about-page .skills-section .skills-extra-subgroup h6 { white-space: nowrap; } }
+.about-page .skills-section .skills-extra-group .skills-list { grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); gap: 7px 6px; }
+.about-page .skills-section .skills-extra-group .skill-item { gap: 7px; min-height: 40px; padding: 2px 4px; }
+.about-page .skills-section .skills-extra-group .skill-mark { flex-basis: 34px; width: 34px; height: 34px; border-radius: 9px; }
+.about-page .skills-section .skills-extra-group .skill-mark--glyph::before { width: 19px; height: 19px; }
+.about-page .skills-section .skills-extra-group .skill-name { font-size: 12px; line-height: 1.35; }
+.about-page .skills-section .skills-extra-group p,
+.about-page .skills-section .skills-extra-subgroup p { margin: 0; color: var(--muted); font: 500 12px/1.5 var(--sans); overflow-wrap: anywhere; }
+@media (max-width: 680px) {
+  .about-page .skills-section .section-lede { margin-left: 18px; }
+}
+@media (max-width: 760px) {
+  .about-page .skills-section .skills-extra-model-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+  .about-page .skills-section .skills-extra-groups,
+  .about-page .skills-section .skills-extra-model-groups { grid-template-columns: minmax(0, 1fr); }
+  .about-page .skills-section .skills-extra-group--nlp { grid-column: auto; }
+  .about-page .skills-section .skills-extra-group .skills-list { grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); }
+}
+
+@media (max-width: 600px) { .about-page .skills-section .skills-shell { width: calc(100% - 36px); } }
